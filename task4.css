@@ -1,0 +1,239 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+:root {
+	--primary: #0a0a23;
+	--accent: #333399;
+	--background: #2b2b32;
+	--text: #f5f6f7;
+	--heading: #3b3b4f;
+	--link: #6c86b2;
+	--hover: #f5f6fc;
+
+
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: var(--primary);
+    align-items: center;
+    border-bottom: 1px solid #5b728a;
+    animation: slideFromRight 1s ease-in-out;
+}
+
+@keyframes slideFromRight {
+    from {
+        transform: translateX(100%);
+    } 
+    to {
+        transform: translateX(0);
+    }
+}
+
+.navbar {
+    display: flex;
+    gap: 20px;
+}
+
+.navbar a {
+    color: var(--text);
+    text-decoration: none;
+    font-weight: 500;
+    transition: .5s;
+}
+
+.navbar a:hover {
+    color: var(--link);
+    text-decoration: underline;
+}
+
+.navbar a:active {
+    color: var(--accent);
+}
+
+.navbar .active {
+    text-decoration: underline;
+    color: var(--link);
+}
+
+.logo {
+    font-size: 25px;
+    color: var(--text);
+    text-decoration: none;
+    font-weight: 700;
+    cursor: pointer;
+    transition: .5s;
+    transform: scale(0);
+    animation: zoom-in 2s ease forwards;
+}
+
+@keyframes zoom-in {
+    100% {
+        transform: scale(1);
+    }
+}
+
+.logo:hover {
+    color: var(--link);
+}
+
+
+.home {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 20px;
+    background: linear-gradient( to top, var(--accent), var(--primary));
+    color: var(--text);
+    text-align: center;
+    height: 85vh;
+    animation: slideFromleft 1s ease-in-out;
+}
+
+@keyframes slideFromleft {
+    from {
+        transform: translateX(-100%);
+    } 
+    to {
+        transform: translateX(0);
+    }
+    
+}
+
+.home h1 {
+    font-size: 1.8em;
+    margin: 0 15px 15px 15px;
+    text-shadow: 3px 3px 4px rgba(255, 255, 255, 0.3);
+    margin-top: 40px;
+}
+
+.home p {
+    font-size: 1.2em;
+    margin: 10px 70px;
+    text-shadow: 3px 3px 4px rgba(255, 255, 255, 0.3);
+}
+
+.home .cta-btn {
+    background-color: var(--link);
+    color: var(--primary);
+    border: 2px solid var(--text) ;
+    border-radius: 20px;
+    font-size: 1.6em;
+    padding: 10px 20px;
+    margin-top: 50px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: .5s;
+    animation: zoom-out 2s ease forwards;
+}
+
+@keyframes zoom-out {
+    from{
+        transform: scale(0)
+    }
+    to{
+        transform: scale(0.7);
+    }
+}
+
+.home .cta-btn:hover {
+    background-color: var(--heading);
+    color: var(--hover);
+}
+
+.card-container {
+    background: linear-gradient( to bottom, var(--primary) ,var(--accent));
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+    height: 100%;
+    padding: 10px;
+}
+
+.card {
+    background-color: var(--text);
+    overflow: hidden;
+    border-radius: 20px;
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 300px;
+    height: 250px;
+    margin: 50px;
+    padding: 20px;
+    border: 2px solid var(--background);
+    text-align: center;
+    box-shadow: 3px 4px 16px rgba(255, 255, 255, 0.3);
+    transition: .5s;
+}
+
+.card h2 {
+    color: var(--primary);
+    margin-bottom: 10px;
+}
+
+.card p {
+    color: #333399 ;
+    font-weight: 500;
+}
+
+.card:hover {
+    box-shadow: 0 0 20px rgb(255, 255, 255);
+    transform: scale(1.03);
+    border: 0;
+}
+
+.card button {
+    background-color: var(--link);
+    color: var(--primary);
+    border: 2px solid var(--primary) ;
+    border-radius: 20px;
+    margin-top: 40px;
+    margin-bottom: 50px;
+    padding: 10px 30px;
+    font-weight: 700;
+    font-size: 1em;
+}
+
+button:hover {
+    background-color: #0a0a23;
+    color: #f5f6f7;
+}
+
+footer {
+    display: flex;
+    justify-content: space-between;
+}
+
+@media (max-width: 600px) {
+    header {
+        flex-direction: column;
+        align-items: start;
+    }
+
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navbar .active {
+        margin-top: 20px;
+    }
+
+    .card-container {
+        display: grid;
+        grid-template-columns: 1fr;
+        justify-items: center;
+    }
+
+    .card {
+        width: 300px;
+    }
+}
+
